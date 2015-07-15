@@ -1,0 +1,57 @@
+.center-text{
+	text-align: center;
+}
+
+.selected-tile-text{
+	text-align: center;
+	font-size: 100px;
+
+}
+
+#banner-color{
+	background: #bdc3c7;
+}
+.flat-green{
+	background: #2ecc71;
+}
+
+.flat-red{
+	background: #e74c3c;
+}
+
+.flat-blue{
+	background: #3498db;
+}
+
+.flat-purple{
+	background: #9b59b6;
+}
+
+
+div.tile{
+	height: 150px;
+	width: 150px;
+	border-radius: 20px;
+	float: left;
+}
+
+a.divlink{
+	display: block;
+	height: 150px;
+	width: 150px;
+
+}
+
+#tilebutton{
+	height: 150px;
+	width: 150px;
+	border-radius: 20px;
+}
+
+button:hover{
+	opacity: .5;
+}
+
+.hide{
+	display: none;
+}
