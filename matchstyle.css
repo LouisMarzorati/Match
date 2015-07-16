@@ -29,28 +29,85 @@
 
 
 div.tile{
-	height: 150px;
-	width: 150px;
+	height: 100px;
+	width: 100px;
 	border-radius: 20px;
 	float: left;
 }
 
 a.divlink{
 	display: block;
-	height: 150px;
-	width: 150px;
+	height: 100px;
+	width: 100px;
 
 }
 
-#tilebutton{
-	height: 150px;
-	width: 150px;
+#tilebuttonGreen{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonBlue{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonRed{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonPurple{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonGreen1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonBlue1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonRed1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonPurple1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonClicked{
+	height: 100px;
+	width: 100px;
 	border-radius: 20px;
 }
 
 button:hover{
-	opacity: .5;
+	opacity: .85;
 }
+
 
 .hide{
 	display: none;

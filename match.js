@@ -1,34 +1,50 @@
-var turn = 0;
-var lastTile = 'nope';
+var tileColor = '';
 
- function clickedTile(selected) {
- 	//only evaluate when its the second click
- 	//figure out a way for it to be calculated.
- 		turn+=1;
-	 	if(turn%2!=0){
-	 		console.log("return");
-	 		return;
-		 	if(!compare(selected)){
-		 		console.log("NOT A MATCH");
-		 		turn=0;
-		 	} else {
-		 		console.log("MATCH");
-		 		turn=0;
-		 	}
+ function clickedTile(selected , color) {
+ 	if(tileColor == ''){
+ 		tileColor = selected;
+ 		document.getElementById(selected).firstChild.style.background = color; 
+ 		return;
+ 	} else {
+ 		if(tileColor == selected.concat('1') || 
+ 			tileColor == selected.substring(0,selected.length-1)){
+ 			matchedout(selected,color);
+ 			setTimeout(function(){
+	 			tileColor = '';
+	 			hideTile(selected);
+ 			},500);
+ 			return;
+ 		} else {
+ 			document.getElementById(selected).firstChild.style.background = color;
+ 			setTimeout(function(){
+ 				grayout(tileColor,selected);
+ 				tileColor ='';
+ 			},500);
+ 			return;
+ 			}
+ 		}
  	}
-}
 
-function compare(tile){
-console.log("compare");
-	if(tile != lastTile){
-		console.log("false");
-		return false;
+function hideTile (tile) {
+	if(tile.indexOf('1')=== -1){
+	var tile1 = tile.concat('1');
+	document.getElementById(tile).className = 'hide';
+	document.getElementById(tile1).className = 'hide';	
 	} else {
-		console.log("true");
-		return true;
+		var tileNoOne = tile.substring(0,tile.length-1);
+		document.getElementById(tile).className = 'hide';
+		document.getElementById(tileNoOne).className = 'hide';
 	}
+	
 }
 
-function setLastClicked(clicked){
-	lastTile = clicked;
+function grayout(tileColor,selected){
+	document.getElementById(tileColor).firstChild.style.background = 'gray';
+ 	document.getElementById(selected).firstChild.style.background = 'gray';
+
+}
+
+function matchedout(selected,color){
+ 	document.getElementById(selected).firstChild.style.background = color;
+
 }
