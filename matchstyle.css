@@ -1,3 +1,10 @@
+/*Create fixed number of poistions on screen
+then asign random number to objects */
+.position1{
+	position: relative;
+	left: 600px;
+
+}
 .center-text{
 	text-align: center;
 }
@@ -9,7 +16,7 @@
 }
 
 #banner-color{
-	background: #bdc3c7;
+	background: #ffff00;
 }
 .flat-green{
 	background: #2ecc71;
