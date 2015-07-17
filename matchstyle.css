@@ -1,18 +1,5 @@
-/*Create fixed number of poistions on screen
-then asign random number to objects */
-.position1{
-	position: relative;
-	left: 600px;
-
-}
 .center-text{
 	text-align: center;
-}
-
-.selected-tile-text{
-	text-align: center;
-	font-size: 100px;
-
 }
 
 #banner-color{
@@ -20,7 +7,7 @@ then asign random number to objects */
 }
 .flat-green{
 	background: #2ecc71;
-}
+} 
 
 .flat-red{
 	background: #e74c3c;
@@ -34,19 +21,16 @@ then asign random number to objects */
 	background: #9b59b6;
 }
 
-
 div.tile{
 	height: 100px;
 	width: 100px;
 	border-radius: 20px;
-	float: left;
 }
 
 a.divlink{
 	display: block;
 	height: 100px;
 	width: 100px;
-
 }
 
 #tilebuttonGreen{
@@ -115,6 +99,10 @@ button:hover{
 	opacity: .85;
 }
 
+button{
+	border: none;
+    outline:none;
+}
 
 .hide{
 	display: none;
