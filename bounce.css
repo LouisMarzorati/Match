@@ -10,6 +10,10 @@
   animation: animation 1300ms linear both;
 }
 
+.animation-target3 {
+  -webkit-animation: animation 1600ms linear both;
+  animation: animation 1600ms linear both;
+}
 /* Generated with Bounce.js. Edit at http://goo.gl/et2XBk */
 
 @-webkit-keyframes animation { 

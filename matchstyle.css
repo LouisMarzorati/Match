@@ -1,24 +1,9 @@
 .center-text{
-	text-align: center;
+	text-indent: 175px;
 }
 
 #banner-color{
-	background: #ffff00;
-}
-.flat-green{
-	background: #2ecc71;
-} 
-
-.flat-red{
-	background: #e74c3c;
-}
-
-.flat-blue{
-	background: #3498db;
-}
-
-.flat-purple{
-	background: #9b59b6;
+	background: #ffffff
 }
 
 div.tile{
@@ -61,6 +46,20 @@ a.divlink{
 	background: gray;
 }
 
+#tilebuttonYellow{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonOrange{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
 #tilebuttonGreen1{
 	height: 100px;
 	width: 100px;
@@ -83,6 +82,20 @@ a.divlink{
 }
 
 #tilebuttonPurple1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonYellow1{
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	background: gray;
+}
+
+#tilebuttonOrange1{
 	height: 100px;
 	width: 100px;
 	border-radius: 20px;

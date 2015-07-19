@@ -12,14 +12,14 @@ var tileColor = '';
  			setTimeout(function(){
 	 			tileColor = '';
 	 			hideTile(selected);
- 			},500);
+ 			},250);
  			return;
  		} else {
  			document.getElementById(selected).firstChild.style.background = color;
  			setTimeout(function(){
  				grayout(tileColor,selected);
  				tileColor ='';
- 			},500);
+ 			},250);
  			return;
  			}
  		}
