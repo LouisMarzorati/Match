@@ -6,6 +6,10 @@
 	background: #ffffff
 }
 
+.scoreDiv{
+	font-size: 25px;
+}
+
 div.tile{
 	height: 100px;
 	width: 100px;
@@ -119,4 +123,9 @@ button{
 
 .hide{
 	display: none;
+}
+
+#winner{
+	text-indent: 175px;
+	font-size: 100px;
 }

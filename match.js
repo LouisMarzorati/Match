@@ -1,4 +1,7 @@
 var tileColor = '';
+var time = 100;
+var score = 0;
+var tiles = 6;
 
  function clickedTile(selected , color) {
  	if(tileColor == ''){
@@ -8,11 +11,17 @@ var tileColor = '';
  	} else {
  		if(tileColor == selected.concat('1') || 
  			tileColor == selected.substring(0,selected.length-1)){
- 			matchedout(selected,color);
- 			setTimeout(function(){
-	 			tileColor = '';
-	 			hideTile(selected);
- 			},250);
+ 			if(tiles > 1 ){			
+	 			matchedout(selected,color);
+	 			setTimeout(function(){
+		 			tileColor = '';
+		 			hideTile(selected);
+		 			points();
+	 			},250);
+	 			tiles--;
+ 			} else {
+ 				wonGame(score);
+ 			} 
  			return;
  		} else {
  			document.getElementById(selected).firstChild.style.background = color;
@@ -47,4 +56,20 @@ function grayout(tileColor,selected){
 function matchedout(selected,color){
  	document.getElementById(selected).firstChild.style.background = color;
 
+}
+function timer(){
+	time = 100;
+	setInterval(function(){
+		document.getElementById('time').innerHTML = time--;
+		},500);
+}
+
+function points(){
+	score +=time;
+	document.getElementById('score').innerHTML = score;
+	timer();
+}
+
+function wonGame(s){
+	document.getElementById('body').innerHTML = "WINNER! Your score was: ".concat(s);
 }

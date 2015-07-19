@@ -15,16 +15,21 @@
 
   </head>
 
-  <body>
+  <body id="body">
 
    <div class="container">
       <div class="jumbotron center-text" id="banner-color">
         <h1>MATCH</h1>
+        <div class="row">
+          <div class = "col-sm-1 scoreDiv" id = "time"> </div>
+          <div class="col-sm-1 scoreDiv"> Score: </div>
+          <div class="col-sm-1 scoreDiv" id = "score"></div>
+        </div>
       </div>
       
       <div class="row"> 
         <div class="col-sm-2">
-            <span id='red'><button class = "animation-target" id="tilebuttonRed" onclick="clickedTile('red','#e74c3c')"></button></span>
+            <span id='red'><button class = "animation-target" id="tilebuttonRed" onclick="clickedTile('red','#e74c3c');timer()"></button></span>
         </div>
 
         <div class="col-sm-2">
