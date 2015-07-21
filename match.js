@@ -2,6 +2,7 @@ var tileColor = '';
 var time = 100;
 var score = 0;
 var tiles = 6;
+var interval = '';
 
  function clickedTile(selected , color) {
  	if(tileColor == ''){
@@ -57,9 +58,10 @@ function matchedout(selected,color){
  	document.getElementById(selected).firstChild.style.background = color;
 
 }
-function timer(){
+
+function timer(s){
 	time = 100;
-	setInterval(function(){
+	interval = setInterval(function(){
 		document.getElementById('time').innerHTML = time--;
 		},500);
 }
@@ -67,9 +69,13 @@ function timer(){
 function points(){
 	score +=time;
 	document.getElementById('score').innerHTML = score;
+	clearInterval(interval);
 	timer();
 }
 
 function wonGame(s){
+	clearInterval(interval);
 	document.getElementById('body').innerHTML = "WINNER! Your score was: ".concat(s);
+	document.getElementById('body').style.fontSize = '100px';
+	document.getElementById('body').style.borderLeftWidth = '500px';
 }
