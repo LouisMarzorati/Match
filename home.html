@@ -21,7 +21,8 @@
       <div class="jumbotron center-text" id="banner-color">
         <h1>MATCH</h1>
         <div class="row">
-          <div class = "col-sm-2 scoreDiv" id = "time"> </div>
+          <button id = "startButton" class = "btn btn-default col-sm-2" onclick="timer();hideButton()">START</button>
+          <div class = "col-sm-2 scoreDiv" id = "time">100</div>
           <div class="col-sm-2 scoreDiv"> Score: </div>
           <div class="col-sm-2 scoreDiv" id = "score"></div>
         </div>
@@ -29,7 +30,7 @@
       
       <div class="row"> 
         <div class="col-sm-2">
-            <span id='red'><button class = "animation-target" id="tilebuttonRed" onclick="clickedTile('red','#e74c3c');timer()"></button></span>
+            <span id='red'><button class = "animation-target " id="tilebuttonRed" onclick="clickedTile('red','#e74c3c')"></button></span>
         </div>
 
         <div class="col-sm-2">

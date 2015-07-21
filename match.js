@@ -3,35 +3,40 @@ var time = 100;
 var score = 0;
 var tiles = 6;
 var interval = '';
+var start = false;
 
  function clickedTile(selected , color) {
- 	if(tileColor == ''){
- 		tileColor = selected;
- 		document.getElementById(selected).firstChild.style.background = color; 
- 		return;
- 	} else {
- 		if(tileColor == selected.concat('1') || 
- 			tileColor == selected.substring(0,selected.length-1)){
- 			if(tiles > 1 ){			
-	 			matchedout(selected,color);
+ 	if(start){
+	 	if(tileColor == ''){
+	 		tileColor = selected;
+	 		document.getElementById(selected).firstChild.style.background = color; 
+	 		return;
+	 	} else {
+	 		if(tileColor == selected.concat('1') || 
+	 			tileColor == selected.substring(0,selected.length-1)){
+	 			if(tiles > 1 ){			
+		 			matchedout(selected,color);
+		 			setTimeout(function(){
+			 			tileColor = '';
+			 			hideTile(selected);
+			 			points();
+		 			},250);
+		 			tiles--;
+	 			} else {
+	 				wonGame(score);
+	 			} 
+	 			return;
+	 		} else {
+	 			document.getElementById(selected).firstChild.style.background = color;
 	 			setTimeout(function(){
-		 			tileColor = '';
-		 			hideTile(selected);
-		 			points();
+	 				grayout(tileColor,selected);
+	 				tileColor ='';
 	 			},250);
-	 			tiles--;
- 			} else {
- 				wonGame(score);
- 			} 
- 			return;
+	 			return;
+	 			}
+	 		}
  		} else {
- 			document.getElementById(selected).firstChild.style.background = color;
- 			setTimeout(function(){
- 				grayout(tileColor,selected);
- 				tileColor ='';
- 			},250);
  			return;
- 			}
  		}
  	}
 
@@ -78,4 +83,9 @@ function wonGame(s){
 	document.getElementById('body').innerHTML = "WINNER! Your score was: ".concat(s);
 	document.getElementById('body').style.fontSize = '100px';
 	document.getElementById('body').style.borderLeftWidth = '500px';
+}
+
+function hideButton(){
+	document.getElementById('startButton').className = 'hide';
+	start = true;
 }
