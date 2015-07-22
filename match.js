@@ -38,7 +38,7 @@ function tileRemoval(selected , color)
 		matchedout(selected,color);
 		setTimeout(function(){
 			tileColor = '';
-			hideTile(selected);
+			hideTileAnimation(selected);
 			points();
 		},250);
 		tiles--;
@@ -59,19 +59,36 @@ function tileCoverUp(selected , color)
 }
 
 //hides matched tiles
-function hideTile (tile)
+function hideTileAnimation (tile)
 {
 	//check to see if tile has 1 in it
 	if(tile.indexOf('1') === -1){
-	var tile1 = tile.concat('1');
-	document.getElementById(tile).className = 'hide';
-	document.getElementById(tile1).className = 'hide';	
-	} else {
-		var tileNoOne = tile.substring(0,tile.length-1);
+		var tile1 = tile.concat('1');
+		document.getElementById(tile).className = 'target-exit';
+		document.getElementById(tile1).className = 'target-exit';
+		} else {
+			var tileNoOne = tile.substring(0,tile.length-1);
+			document.getElementById(tile).className = 'target-exit';
+			document.getElementById(tileNoOne).className = 'target-exit';
+		}
+	setTimeout(function(){
+		hideTile(tile);
+		},250);
+
+
+}
+
+function hideTile(tile)
+{
+	if(tile.indexOf('1') === -1){
+		var tile1 = tile.concat('1');
 		document.getElementById(tile).className = 'hide';
-		document.getElementById(tileNoOne).className = 'hide';
-	}
-	
+		document.getElementById(tile1).className = 'hide';
+		} else {
+			var tileNoOne = tile.substring(0,tile.length-1);
+			document.getElementById(tile).className = 'hide';
+			document.getElementById(tileNoOne).className = 'hide';
+		}
 }
 
 //grays out tiles that aren't a match
@@ -89,7 +106,7 @@ function matchedout(selected,color)
 }
 
 //count down timer for score purposes.
-function scoreTimer(s)
+function scoreTimer()
 {
 	time = 100;
 	interval = setInterval(function(){
